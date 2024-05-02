@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "236658525220",
+    "project_id": "fsre-timetable-notify",
+    "storage_bucket": "fsre-timetable-notify.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236658525220:android:08d6ef7ace26dde4dac4b1",
+        "android_client_info": {
+          "package_name": "me.leopetrovic.fsre_notifier"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwXoFpLxaBcBw40bcg81av--SfHHmkIG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
