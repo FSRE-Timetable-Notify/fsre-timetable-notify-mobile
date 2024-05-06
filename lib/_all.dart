@@ -21,6 +21,10 @@ export 'package:week_number/iso.dart';
 export 'package:bloc_concurrency/bloc_concurrency.dart';
 export 'package:shared_preferences_tools/shared_preferences_tools.dart';
 export 'package:restart_app/restart_app.dart';
+export 'package:flutter_localizations/flutter_localizations.dart';
+
+// Generated
+export 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Top-level
 export 'app.dart';

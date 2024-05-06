@@ -1,0 +1,141 @@
+{
+  "@@author": "Leo Petrović",
+  "@@context": "The presentation widgets",
+  "@@last_modified": "2024-05-06T10:48:00",
+  "@@locale": "en",
+  "appTitle": "FSRE InTime",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "error": "Error: {error}",
+  "@error": {
+    "description": "A label showing an error message",
+    "placeholders": {
+      "error": {
+        "description": "The error message",
+        "type": "String",
+        "example": "Failed to load data"
+      }
+    }
+  },
+  "homeScreenTitle": "Home",
+  "@homeScreenTitle": {
+    "description": "The title of the home screen"
+  },
+  "timetableRefreshEventDetected": "{count, plural, zero{No changes} one{One change} other{{count} changes}} detected at {datetime}",
+  "@timetableRefreshEventDetected": {
+    "description": "A label showing how many timetable changes were detected from a refresh event and when",
+    "placeholders": {
+      "count": {
+        "description": "The number of changes detected",
+        "type": "int",
+        "example": "3"
+      },
+      "datetime": {
+        "description": "The date and time when the changes were detected",
+        "type": "DateTime",
+        "format": "Hm",
+        "example": "18:30"
+      }
+    }
+  },
+  "timetableEventStartsAt": "Starts at {datetime}",
+  "@timetableEventStartsAt": {
+    "description": "A label showing when the timetable event starts",
+    "placeholders": {
+      "datetime": {
+        "description": "The date and time when the timetable event starts",
+        "type": "DateTime",
+        "format": "Hm",
+        "example": "18:30"
+      }
+    }
+  },
+  "weekRange": "{weekStartDate} - {weekEndDate}",
+  "@weekRange": {
+    "description": "A label showing the start and end date of a week, provided with the week's start and end dates",
+    "placeholders": {
+      "weekStartDate": {
+        "description": "The start date of the week",
+        "type": "DateTime",
+        "format": "Md",
+        "example": "06/05"
+      },
+      "weekEndDate": {
+        "description": "The end date of the week",
+        "type": "DateTime",
+        "format": "Md",
+        "example": "12/05"
+      }
+    }
+  },
+  "weekDay": "{weekDayIndex, select, 0{Monday} 1{Tuesday} 2{Wednesday} 3{Thursday} 4{Friday} 5{Saturday} 6{Sunday} other{Unknown}}",
+  "@weekDay": {
+    "description": "A label for a day of the week",
+    "placeholders": {
+      "weekDayIndex": {
+        "description": "The index of the day of the week, starting from 0 for Monday",
+        "type": "String",
+        "example": "3"
+      }
+    }
+  },
+  "notificationPermissionsRequestFailed": "Failed to request notification permissions",
+  "@notificationPermissionsRequestFailed": {
+    "description": "An error message shown when the app fails to request notification permissions"
+  },
+  "allowNotificationPermissions": "Allow notification permissions",
+  "@allowNotificationPermissions": {
+    "description": "A label for a button which allows notification permissions"
+  },
+  "notificationHistory": "Notification history",
+  "@notificationHistory": {
+    "description": "A label for the notification history section"
+  },
+  "noNotifications": "No notifications received",
+  "@noNotifications": {
+    "description": "A message shown when there are no notifications in the history"
+  },
+  "deleteHistory": "Delete history",
+  "@deleteHistory": {
+    "description": "A label for a button that deletes the notification history"
+  },
+  "switchServer": "Switch to {serverType, select, production{production} debug{debug} other{unknown}} server",
+  "@switchServer": {
+    "description": "A label for a button that switches the server type",
+    "placeholders": {
+      "serverType": {
+        "description": "The type of server to switch to",
+        "type": "String",
+        "example": "production"
+      }
+    }
+  },
+  "searchStudyPrograms": "Search study programs",
+  "@searchStudyPrograms": {
+    "description": "A label for a search input field for study programs"
+  },
+  "selectStudyProgram": "Select a study program",
+  "@studyPrograms": {
+    "description": "A label for a dropdown that allows selecting a study program"
+  },
+  "searchLanguages": "Search languages",
+  "@searchLanguages": {
+    "description": "A label for a search input field for languages"
+  },
+  "selectLanguage": "Select a language",
+  "@selectLanguage": {
+    "description": "A label for a dropdown that allows selecting a language"
+  },
+  "language": "{locale, select, other{Unknown} en{English} hr{Croatian}}",
+  "@language": {
+    "description": "A label that shows a language name",
+    "placeholders": {
+      "locale": {
+        "description": "The locale of the language",
+        "type": "String",
+        "example": "en"
+      }
+    }
+  }
+}

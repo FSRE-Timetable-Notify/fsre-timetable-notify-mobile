@@ -29,6 +29,11 @@ class Startup {
         sharedPreferences: sharedPreferences,
       ),
     );
+    getIt.registerSingleton<LocaleRepository>(
+      LocaleRepository(
+        sharedPreferences: sharedPreferences,
+      ),
+    );
     getIt.registerSingleton<TimetableDatabaseRepository>(
       TimetableDatabaseRepository(
         timetableDatabaseApi: TimetableDatabaseHttpApi(

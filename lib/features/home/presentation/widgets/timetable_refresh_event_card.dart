@@ -1,5 +1,4 @@
 import 'package:fsre_notifier/_all.dart';
-import 'package:intl/intl.dart';
 
 class _NormalizedTimetableEvent {
   const _NormalizedTimetableEvent({
@@ -25,7 +24,11 @@ class TimetableRefreshEventCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${event.newTimetableEvents.length + event.removedTimetableEvents.length} change${(event.newTimetableEvents.length + event.removedTimetableEvents.length) == 1 ? "" : "s"} detected at ${DateFormat("HH:mm").format(event.timestamp)}",
+              AppLocalizations.of(context)!.timetableRefreshEventDetected(
+                event.newTimetableEvents.length +
+                    event.removedTimetableEvents.length,
+                event.timestamp,
+              ),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const Divider(),
@@ -70,27 +73,24 @@ class TimetableRefreshEventCard extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    normalizedTimetableEvent
-                                        .timetableEvent.name,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleSmall!
-                                        .copyWith(
-                                          color: normalizedTimetableEvent.isNew
-                                              ? Colors.green.shade100
-                                              : Colors.red.shade100,
-                                        ),
+                                    AppLocalizations.of(context)!.weekDay(
+                                      "${normalizedTimetableEvent.timetableEvent.startDate.weekday - 1}",
+                                    ),
                                   ),
                                   Text(
-                                    "Počinje u ${DateFormat("HH:mm").format(normalizedTimetableEvent.timetableEvent.startDate)}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall!
-                                        .copyWith(
-                                          color: normalizedTimetableEvent.isNew
-                                              ? Colors.green.shade50
-                                              : Colors.red.shade50,
-                                        ),
+                                    normalizedTimetableEvent
+                                        .timetableEvent.name,
+                                    style:
+                                        Theme.of(context).textTheme.titleSmall,
+                                  ),
+                                  Text(
+                                    AppLocalizations.of(context)!
+                                        .timetableEventStartsAt(
+                                      normalizedTimetableEvent
+                                          .timetableEvent.startDate,
+                                    ),
+                                    style:
+                                        Theme.of(context).textTheme.labelSmall,
                                   ),
                                 ],
                               ),

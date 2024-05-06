@@ -10,6 +10,6 @@ class DateTimeSerializer implements JsonConverter<DateTime, dynamic> {
 
   @override
   dynamic toJson(DateTime object) {
-    return object.toIso8601String();
+    return object.toUtc().toIso8601String();
   }
 }

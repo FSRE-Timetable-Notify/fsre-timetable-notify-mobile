@@ -1,5 +1,4 @@
 import 'package:fsre_notifier/_all.dart';
-import 'package:intl/intl.dart';
 
 class WeekPicker extends StatelessWidget {
   const WeekPicker({super.key, required this.selectedWeekId});
@@ -20,7 +19,11 @@ class WeekPicker extends StatelessWidget {
           icon: const Icon(Icons.chevron_left),
         ),
         Text(
-          "${DateFormat("dd/MM").format(getStartDateOfISOWeek(selectedWeekId.yearWeek))} - ${DateFormat("dd/MM").format(getStartDateOfISOWeek(selectedWeekId.yearWeek).add(const Duration(days: DateTime.daysPerWeek - 1)))}",
+          AppLocalizations.of(context)!.weekRange(
+            getStartDateOfISOWeek(selectedWeekId.yearWeek),
+            getStartDateOfISOWeek(selectedWeekId.yearWeek)
+                .add(const Duration(days: DateTime.daysPerWeek - 1)),
+          ),
           style: Theme.of(context).textTheme.titleLarge,
         ),
         IconButton(

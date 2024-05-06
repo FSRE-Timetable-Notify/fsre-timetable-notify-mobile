@@ -9,7 +9,7 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('Home'),
+      title: Text(AppLocalizations.of(context)!.homeScreenTitle),
       actions: [
         IconButton(
           onPressed: () {

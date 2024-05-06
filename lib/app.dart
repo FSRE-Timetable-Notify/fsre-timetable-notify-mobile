@@ -20,6 +20,11 @@ class App extends StatelessWidget {
           ),
         ),
         BlocProvider(
+          create: (context) => LocaleCubit(
+            localeRepository: getIt<LocaleRepository>(),
+          ),
+        ),
+        BlocProvider(
           create: (context) => TimetableDatabaseBloc(
             timetableDatabaseRepository: getIt<TimetableDatabaseRepository>(),
           ),
@@ -31,18 +36,24 @@ class App extends StatelessWidget {
           ),
         ),
       ],
-      child: BlocBuilder<ThemeCubit, ThemeState>(
-        builder: (context, themeState) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            title: 'FSRE Notifier',
-            theme: lightTheme,
-            darkTheme: darkTheme,
-            themeMode: themeState.themeMode,
-            routerConfig: goRouter,
-          );
-        },
-      ),
+      child: BlocBuilder<LocaleCubit, LocaleState>(
+          builder: (context, localeState) {
+        return BlocBuilder<ThemeCubit, ThemeState>(
+          builder: (context, themeState) {
+            return MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              title: AppLocalizations.of(context)?.appTitle ?? "FSRE InTime",
+              theme: lightTheme,
+              darkTheme: darkTheme,
+              themeMode: themeState.themeMode,
+              routerConfig: goRouter,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
+              locale: localeState.locale,
+            );
+          },
+        );
+      }),
     );
   }
 }

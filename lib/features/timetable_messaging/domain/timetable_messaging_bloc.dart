@@ -162,11 +162,11 @@ class TimetableMessagingBloc
           "TimetableMessagingBloc: Subscription already exists for the selected topic '${event.timetableKey}'",
         );
       }
-    }
 
-    debugPrint(
-      "TimetableMessagingBloc: Added subscription to topic '${event.timetableKey}'",
-    );
+      debugPrint(
+        "TimetableMessagingBloc: Added subscription to topic '${event.timetableKey}'",
+      );
+    }
 
     // Register a listener for incoming messages if not already registered
     // This listener parses the message and stores it in the local message history

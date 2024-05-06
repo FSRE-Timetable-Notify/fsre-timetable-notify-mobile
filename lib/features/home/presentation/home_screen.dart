@@ -19,7 +19,10 @@ class HomeScreen extends StatelessWidget {
               .asStream(),
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Text("Failed to request notification permissions");
+              return Text(
+                AppLocalizations.of(context)!
+                    .notificationPermissionsRequestFailed,
+              );
             }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -32,7 +35,9 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   firebaseRepository.firebaseMessaging.requestPermission();
                 },
-                child: const Text("Allow notification permissions"),
+                child: Text(
+                  AppLocalizations.of(context)!.allowNotificationPermissions,
+                ),
               );
             }
 
@@ -49,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      "Notification history",
+                      AppLocalizations.of(context)!.notificationHistory,
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     const SizedBox(height: 16),
@@ -57,7 +62,9 @@ class HomeScreen extends StatelessWidget {
                       Column(
                         children: [
                           Text(
-                            "Error: ${timetableMessagingState.error.toString()}",
+                            AppLocalizations.of(context)!.error(
+                              timetableMessagingState.error.toString(),
+                            ),
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme
@@ -70,7 +77,9 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     if (timetableMessagingState.eventHistory.isEmpty)
-                      const Text("No notifications received")
+                      Text(
+                        AppLocalizations.of(context)!.noNotifications,
+                      )
                     else
                       Expanded(
                         child: ListView.builder(

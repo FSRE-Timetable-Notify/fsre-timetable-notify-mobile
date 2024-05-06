@@ -76,8 +76,6 @@ class TimetableMessagingRepository {
           "timetableRefreshEventItemsHistory-${formatTimetableKey(timetableKey)}");
     }
 
-    debugPrint(storedHistory.toString());
-
     final history = storedHistory != null
         ? storedHistory
             .map((e) => TimetableRefreshEvent.fromJson(
