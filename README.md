@@ -1,16 +1,5 @@
-# fsre_notifier
+# FSRE Timetable Notifier Mobile App
 
-FSRE Notifier App
+Mobile App for the FSRE Timetable Notifier project. Made with Flutter.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The purpose of the mobile app is to provide the users with a way to view and manage their subscriptions to individual study programs. Unlike the web frontend which uses email addresses as the main identifier and message source of users, the mobile app uses a Firebase Cloud Messaging (FCM) key. This key is stored in the backend upon app startup, and the user can subscribe to study programs by associating them with their FCM key. The notifications will arrive to the user's device using FCM.
